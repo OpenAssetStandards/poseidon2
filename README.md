@@ -18,8 +18,12 @@ The permutation function exposed by the Poseidon2 class is one-to-one compatible
 </div>
 
 
-# Usage:
-## For Goldilocks Field, T = 12
+# Install
+```bash
+npm install poseidon2
+```
+
+## Usage For Goldilocks Field, T = 12
 ### Permute
 ```javascript
 import {permute} from 'poseidon2/goldilocks-12';
