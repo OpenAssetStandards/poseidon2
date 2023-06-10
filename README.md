@@ -10,9 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
-  <h3 align="center">poseidon2</h3>
-
+  <h1 align="center">poseidon2</h1>
   <p align="center">
 A zero dependency implementation of the <a href="https://eprint.iacr.org/2023/323.pdf">Poseidon2</a> hash function.
 The permutation function exposed by the Poseidon2 class is one-to-one compatible with <a href="https://github.com/HorizenLabs/poseidon2/blob/main/plain_implementations/src/poseidon2/poseidon2.rs">HorizenLabs/poseidon2</a>. 3kb gzipped 🎉
