@@ -4,9 +4,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -17,38 +14,58 @@ The permutation function exposed by the Poseidon2 class is one-to-one compatible
   </p>
 </div>
 
-
 # Install
+
 ```bash
 npm install poseidon2
 ```
 
 ## Usage For Goldilocks Field, T = 12
+
 ### Permute
+
 ```javascript
-import {permute} from 'poseidon2/goldilocks-12';
-const result = permute([1337n, 123456n, 100n, 15n, 1n, 2n, 3n, 4n, 22n, 23n, 24n, 25n]);
+import { permute } from "poseidon2/goldilocks-12";
+const result = permute([
+  1337n,
+  123456n,
+  100n,
+  15n,
+  1n,
+  2n,
+  3n,
+  4n,
+  22n,
+  23n,
+  24n,
+  25n,
+]);
 ```
 
 ### Two to One (Hash two 4-element-wide values)
+
 ```javascript
-import {twoToOne} from 'poseidon2/goldilocks-12';
+import { twoToOne } from "poseidon2/goldilocks-12";
 const result = twoToOne([1337n, 123456n, 100n, 15n], [1n, 2n, 3n, 4n]);
 ```
 
 ### Sponge Hash with Pad (Hash n elements with padding)
+
 ```javascript
-import {hashPad} from 'poseidon2/goldilocks-12';
+import { hashPad } from "poseidon2/goldilocks-12";
 const result = hashPad([1n, 2n, 3n, 1337n, 9999n, 123n]);
 ```
 
 ## How to use with other prime fields/t values
+
 See [Working with other prime fields and t values](./CUSTOM_FIELD_T.md).
 
 ## Credits
+
 Original implementation of poseidon2 by https://github.com/HorizenLabs
 
 # License
+
 MIT License
 
 Copyright (c) 2023 Zero Knowledge Labs Limited
@@ -71,10 +88,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/OpenAssetStandards/poseidon2.svg?style=for-the-badge
 [contributors-url]: https://github.com/OpenAssetStandards/poseidon2/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/OpenAssetStandards/poseidon2.svg?style=for-the-badge

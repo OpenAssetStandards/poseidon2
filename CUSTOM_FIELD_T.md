@@ -1,9 +1,11 @@
 # How to use with other prime fields/t values
+
 1. First lookup the constants for your desired prime field and t value (state size) here https://github.com/HorizenLabs/poseidon2/tree/main/plain_implementations/src/poseidon2.
-2. If the constants for your prime field/t have not already been precomputed, compute them using (this sage script)[https://github.com/HorizenLabs/poseidon2/blob/main/poseidon2_rust_params.sage] 
+2. If the constants for your prime field/t have not already been precomputed, compute them using (this sage script)[https://github.com/HorizenLabs/poseidon2/blob/main/poseidon2_rust_params.sage]
 3. Use the proper constants to generate `Poseidon2Params` and create a new `Poseidon2` class instance using your desired prime
+
 ```typescript
-import {Poseidon2, F1Field, Poseidon2Params} from 'poseidon2';
+import { Poseidon2, F1Field, Poseidon2Params } from "poseidon2";
 
 // call this function with your parameters from sage/horizen labs' precomputed constants
 function getPoseidon2Params(
