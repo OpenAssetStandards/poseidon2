@@ -2,7 +2,7 @@
   "name": "poseidon2",
   "license": "MIT",
   "author": "Open Asset Standards",
-  "version": "0.2.0",
+  "version": "0.1.2",
   "description": "A zero dependency TypeScript implementation of the Poseidon2 Hash Function",
   "main": "./dist/poseidon2.cjs",
   "module": "./dist/poseidon2.mjs",
