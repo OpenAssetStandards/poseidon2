@@ -8,17 +8,19 @@
   "module": "./dist/poseidon2.mjs",
   "exports": {
     "./goldilocks-12": {
+      "types": "./dist/goldilocks-12.d.ts",
       "require": "./dist/goldilocks-12.cjs",
       "import": "./dist/goldilocks-12.mjs"
     },
     ".": {
+      "types": "./dist/poseidon2.d.ts",
       "require": "./dist/poseidon2.cjs",
       "import": "./dist/poseidon2.mjs"
     }
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "rimraf ./dist && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "build": "rimraf ./dist && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && tsc -p ./tsconfig.types.json",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "lint:scripts": "eslint . --ext .ts",
