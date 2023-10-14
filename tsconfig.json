@@ -17,6 +17,7 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client", "node"]
   },
-  "include": ["src"],
+  "include": ["src/index.ts", "src/goldilocks-12/index.ts"],
+  "files": ["src/index.ts", "src/goldilocks-12/index.ts"],
   "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
 }
