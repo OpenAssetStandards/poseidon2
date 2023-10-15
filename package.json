@@ -2,7 +2,7 @@
   "name": "poseidon2",
   "license": "MIT",
   "author": "Open Asset Standards",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "A zero dependency TypeScript implementation of the Poseidon2 Hash Function",
   "main": "./dist/poseidon2.cjs",
   "module": "./dist/poseidon2.mjs",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "rimraf ./dist && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && tsc -p ./tsconfig.types.json",
+    "build": "rimraf ./dist && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "lint:scripts": "eslint . --ext .ts",

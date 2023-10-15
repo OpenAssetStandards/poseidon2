@@ -6,9 +6,10 @@ const SPONGE_RATE = 8;
 const SPONGE_WIDTH = 12;
 const ZERO = BigInt(0);
 const F = Poseidon2Goldilocks12.primeField;
-
-function hashNToMNoPad(inputsBase: bigint[], numOutputs: number): bigint[] {
-  const inputs: bigint[] = inputsBase.map((x: any) => F.e(x));
+function hashNToMNoPad(
+  inputs: bigint[] | BigUint64Array,
+  numOutputs: number
+): bigint[] {
   const inputsLength = inputs.length;
 
   let state: bigint[] = [
@@ -27,14 +28,14 @@ function hashNToMNoPad(inputsBase: bigint[], numOutputs: number): bigint[] {
   ];
   const nChunks = Math.floor(inputsLength / SPONGE_RATE);
   for (let i = 0; i < nChunks; i++) {
-    state[0] = inputs[i * 8 + 0];
-    state[1] = inputs[i * 8 + 1];
-    state[2] = inputs[i * 8 + 2];
-    state[3] = inputs[i * 8 + 3];
-    state[4] = inputs[i * 8 + 4];
-    state[5] = inputs[i * 8 + 5];
-    state[6] = inputs[i * 8 + 6];
-    state[7] = inputs[i * 8 + 7];
+    state[0] = F.e(inputs[i * 8]);
+    state[1] = F.e(inputs[i * 8 + 1]);
+    state[2] = F.e(inputs[i * 8 + 2]);
+    state[3] = F.e(inputs[i * 8 + 3]);
+    state[4] = F.e(inputs[i * 8 + 4]);
+    state[5] = F.e(inputs[i * 8 + 5]);
+    state[6] = F.e(inputs[i * 8 + 6]);
+    state[7] = F.e(inputs[i * 8 + 7]);
     const n_state = Poseidon2Goldilocks12.permute(state);
     state[0] = n_state[0];
     state[1] = n_state[1];
@@ -53,7 +54,7 @@ function hashNToMNoPad(inputsBase: bigint[], numOutputs: number): bigint[] {
   const remaining = inputsLength - start;
   if (remaining > 0 && remaining < state.length) {
     for (let i = 0; i < remaining; i++) {
-      state[i] = inputs[start + i];
+      state[i] = F.e(inputs[start + i]);
     }
     const n_state = Poseidon2Goldilocks12.permute(state);
     state[0] = n_state[0];
@@ -93,7 +94,7 @@ function hashPad(input: bigint[]) {
   paddedInput.push(BigInt(1));
   return hashNToMNoPad(paddedInput, 4).slice(0, 4);
 }
-function hashNoPad(input: bigint[]): IHashOut {
+function hashNoPad(input: bigint[] | BigUint64Array): IHashOut {
   const output = hashNToMNoPad(input, 4);
   return [output[0], output[1], output[2], output[3]];
 }

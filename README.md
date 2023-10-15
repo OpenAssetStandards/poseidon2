@@ -20,8 +20,12 @@ The permutation function exposed by the Poseidon2 class is one-to-one compatible
 npm install poseidon2
 ```
 
-## Usage For Goldilocks Field, T = 12
+#### Note For TypeScript Users:
+If you see the error "Cannot find module 'poseidon2/goldilocks-12' or its corresponding type declarations.ts(2307)", update your tsconfig.json to set "moduleResolution": "NodeNext".
 
+
+
+## Usage For Goldilocks Field, T = 12
 ### Permute
 
 ```javascript
