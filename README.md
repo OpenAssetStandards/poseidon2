@@ -21,11 +21,11 @@ npm install poseidon2
 ```
 
 #### Note For TypeScript Users:
+
 If you see the error "Cannot find module 'poseidon2/goldilocks-12' or its corresponding type declarations.ts(2307)", update your tsconfig.json to set "moduleResolution": "NodeNext".
 
-
-
 ## Usage For Goldilocks Field, T = 12
+
 ### Permute
 
 ```javascript
