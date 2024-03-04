@@ -26,7 +26,7 @@ class Poseidon2 {
         this.primeField.mul(input2, input)
       );
     } else {
-      throw new Error("Invalid d paramter, must be 3, 5 or 7");
+      throw new Error("Invalid d parameter, must be 3, 5 or 7");
     }
   }
   matmulExternal(input: bigint[]): bigint[] {
